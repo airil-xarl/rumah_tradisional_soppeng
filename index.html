@@ -7,39 +7,6 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!--
-        Theme controls UI (commented out per request; keep for future use)
-        <div class="theme-menu" aria-label="Pengaturan tema warna">
-            <button type="button" class="theme-menu__toggle" data-theme-toggle aria-expanded="false">
-                Tema
-            </button>
-            <form class="theme-menu__panel" data-theme-panel hidden>
-                <fieldset>
-                    <legend>Warna Latar</legend>
-                    <label>
-                        <span>Latar Utama</span>
-                        <input type="color" name="--bg" value="#0b1020">
-                    </label>
-                    <label>
-                        <span>Panel</span>
-                        <input type="color" name="--panel" value="#111831">
-                    </label>
-                </fieldset>
-                <fieldset>
-                    <legend>Kontras</legend>
-                    <label>
-                        <span>Teks</span>
-                        <input type="color" name="--ink" value="#e6edf3">
-                    </label>
-                    <label>
-                        <span>Aksen</span>
-                        <input type="color" name="--accent" value="#22d3ee">
-                    </label>
-                </fieldset>
-                <button type="button" class="theme-menu__reset" data-theme-reset>Reset</button>
-            </form>
-        </div>
-    -->
 
     <header>
         <!-- Place the image file at ./images/images_mapping.jpg or adjust the src below -->
@@ -92,88 +59,5 @@
         © 2025 · Tur Virtual Rumah Adat Baruga · Dibangun dengan Pannellum 360°
     </footer>
 
-    <!--
-        Theme control script (commented out per request; leave in place for later reactivation)
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const root = document.documentElement;
-                const menu = document.querySelector(".theme-menu");
-                if (!menu) return;
-
-                const toggle = menu.querySelector("[data-theme-toggle]");
-                const panel = menu.querySelector("[data-theme-panel]");
-                const reset = menu.querySelector("[data-theme-reset]");
-                if (!toggle || !panel || !reset) return;
-                const colorInputs = Array.from(panel.querySelectorAll('input[type="color"]'));
-                const storageKey = "baruga-theme-overrides";
-                const defaults = Object.fromEntries(colorInputs.map((input) => [input.name, input.value]));
-
-                const applyTheme = (map) => {
-                    Object.entries(map).forEach(([token, color]) => {
-                        if (!color) return;
-                        root.style.setProperty(token, color);
-                    });
-                };
-
-                const hydrateInputs = (map) => {
-                    colorInputs.forEach((input) => {
-                        if (map[input.name]) {
-                            input.value = map[input.name];
-                        }
-                    });
-                };
-
-                const saved = localStorage.getItem(storageKey);
-                if (saved) {
-                    try {
-                        const parsed = JSON.parse(saved);
-                        applyTheme(parsed);
-                        hydrateInputs(parsed);
-                    } catch (error) {
-                        console.warn("Gagal memuat tema tersimpan:", error);
-                    }
-                }
-
-                toggle.addEventListener("click", () => {
-                    const willOpen = panel.hasAttribute("hidden");
-                    if (willOpen) {
-                        panel.removeAttribute("hidden");
-                    } else {
-                        panel.setAttribute("hidden", "");
-                    }
-                    toggle.setAttribute("aria-expanded", String(willOpen));
-                });
-
-                panel.addEventListener("input", (event) => {
-                    if (!(event.target instanceof HTMLInputElement)) return;
-                    if (event.target.type !== "color") return;
-
-                    const token = event.target.name;
-                    const color = event.target.value;
-                    root.style.setProperty(token, color);
-
-                    const current = (() => {
-                        try {
-                            return JSON.parse(localStorage.getItem(storageKey) ?? "{}");
-                        } catch (_) {
-                            return {};
-                        }
-                    })();
-
-                    current[token] = color;
-                    localStorage.setItem(storageKey, JSON.stringify(current));
-                });
-
-                    reset.addEventListener("click", () => {
-                    colorInputs.forEach((input) => {
-                        const defaultColor = defaults[input.name];
-                        input.value = defaultColor;
-                        root.style.removeProperty(input.name);
-                    });
-                    localStorage.removeItem(storageKey);
-                });
-            });
-        </script>
-    -->
 </body>
 </html>
