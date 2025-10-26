@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pannellum Tour 0–53 (no loops)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-    <link rel="stylesheet" href="css/baruga.css">
+    <link rel="stylesheet" href="style/vtour.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
 </head>
@@ -49,85 +49,9 @@
   <button onclick="viewer.loadScene('s19')">19</button>
   <button onclick="viewer.loadScene('s20')">20</button>
   <button onclick="viewer.loadScene('s21')">21</button>
-  <button onclick="viewer.loadScene('s22')">22</button>
-  <button onclick="viewer.loadScene('s23')">23</button>
-  <button onclick="viewer.loadScene('s24')">24</button>
-  <button onclick="viewer.loadScene('s25')">25</button>
-  <button onclick="viewer.loadScene('s26')">26</button>
-  <button onclick="viewer.loadScene('s27')">27</button>
-  <button onclick="viewer.loadScene('s28')">28</button>
-  <button onclick="viewer.loadScene('s29')">29</button>
-  <button onclick="viewer.loadScene('s30')">30</button>
-  <button onclick="viewer.loadScene('s31')">31</button>
-  <button onclick="viewer.loadScene('s32')">32</button>
-  <button onclick="viewer.loadScene('s33')">33</button>
-  <button onclick="viewer.loadScene('s34')">34</button>
-  <button onclick="viewer.loadScene('s35')">35</button>
-  <button onclick="viewer.loadScene('s36')">36</button>
-  <button onclick="viewer.loadScene('s37')">37</button>
-  <button onclick="viewer.loadScene('s38')">38</button>
-  <button onclick="viewer.loadScene('s39')">39</button>
-  <button onclick="viewer.loadScene('s40')">40</button>
-  <button onclick="viewer.loadScene('s41')">41</button>
-  <button onclick="viewer.loadScene('s42')">42</button>
-  <button onclick="viewer.loadScene('s43')">43</button>
-  <button onclick="viewer.loadScene('s44')">44</button>
-  <button onclick="viewer.loadScene('s45')">45</button>
-  <button onclick="viewer.loadScene('s46')">46</button>
-  <button onclick="viewer.loadScene('s47')">47</button>
-  <button onclick="viewer.loadScene('s48')">48</button>
-  <button onclick="viewer.loadScene('s49')">49</button>
-  <button onclick="viewer.loadScene('s50')">50</button>
-  <button onclick="viewer.loadScene('s51')">51</button>
-  <button onclick="viewer.loadScene('s52')">52</button>
-  <button onclick="viewer.loadScene('s53')">53</button>
-</div>
 
 <script>
 
-  // function renderAlertHotspot(hotSpotDiv, args) {
-  //   hotSpotDiv.classList.add('custom-hotspot');
-
-  //   if (args) {
-  //     const tooltip = document.createElement('span');
-  //     tooltip.textContent = args;
-  //     hotSpotDiv.appendChild(tooltip);
-  //   }
-  // }
-
-  /*
-    // === Generator otomatis hotspot ===
-    // const LAST_SCENE_INDEX = 53;
-    // const scenes = {};
-    // for (let i = 0; i <= LAST_SCENE_INDEX; i += 1) {
-    //   const sceneId = `s${i}`;
-    //   const entry = {
-    //     title: `Spot ${i}`,
-    //     type: "equirectangular",
-    //     panorama: `panos/image${i}.jpg`
-    //   };
-    //   if (i < LAST_SCENE_INDEX) {
-    //     entry.hotSpots = [{
-    //       pitch: 0,
-    //       yaw: 0,
-    //       type: "scene",
-    //       sceneId: `s${i + 1}`,
-    //       text: `Ke Spot ${i + 1}`
-    //     }];
-    //   }
-    //   scenes[sceneId] = entry;
-    // }
-    // var viewer = pannellum.viewer('panorama', {
-    //   "default": {
-    //     "firstScene": "s0",
-    //     "autoLoad": true,
-    //     "showControls": true
-    //   },
-    //   "scenes": scenes
-    // });
-  */
-
-  // === Konfigurasi manual dengan hotspot eksplisit ===
   var viewer = pannellum.viewer('panorama', {
     "default": {
       "firstScene": "s0",
@@ -135,7 +59,8 @@
       "showControls": true
     },
     "scenes": {
-      "s0":  { "title": "Spot 0",  "type": "equirectangular", "panorama": "panos/image0.jpg",  "hotSpots": [
+      "s0":  { 
+        "title": "Spot 0",  "type": "equirectangular", "panorama": "panos/image0.jpg",  "hotSpots": [
         { "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s1",  "text": "Ke Spot 1" },
         {
             "pitch": 24,
@@ -163,9 +88,31 @@
             "text": "Bunga"
         },
       ] },
-      "s1":  { "title": "Spot 1",  "type": "equirectangular", "panorama": "panos/image1.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s2",  "text": "Ke Spot 2" }] },
-      "s2":  { "title": "Spot 2",  "type": "equirectangular", "panorama": "panos/image2.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s3",  "text": "Ke Spot 3" }] },
-      "s3":  { "title": "Spot 3",  "type": "equirectangular", "panorama": "panos/image3.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s4",  "text": "Ke Spot 4" }] },
+      "s1":  { "title": "Spot 1",  
+        "type": "equirectangular", 
+            "panorama": "Aset/360/pano.01.jpg",  
+            "hotSpots":  
+           [{ "pitch": 0, 
+              "yaw": 0, 
+              "type": "scene", 
+              "sceneId": "s2",  
+              "text": "Ke Spot 2" 
+           }
+         ] 
+       },
+      "s2":  { "title": "Spot 2",  
+        "type": "equirectangular", 
+          "panorama": "pano.02.jpg",  
+          "hotSpots": 
+            [{ "pitch": 0, 
+              "yaw": 0, 
+              "type": "scene", 
+              "sceneId": "s3",  
+              "text": "Ke Spot 3" 
+            }
+          ] 
+        },
+      "s3":  { "title": "Spot 3",  "type": "equirectangular", "panorama": "pano.03.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s4",  "text": "Ke Spot 4" }] },
       "s4":  { "title": "Spot 4",  "type": "equirectangular", "panorama": "panos/image4.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s5",  "text": "Ke Spot 5" }] },
       "s5":  { "title": "Spot 5",  "type": "equirectangular", "panorama": "panos/image5.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s6",  "text": "Ke Spot 6" }] },
       "s6":  { "title": "Spot 6",  "type": "equirectangular", "panorama": "panos/image6.jpg",  "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s7",  "text": "Ke Spot 7" }] },
@@ -184,39 +131,7 @@
       "s19": { "title": "Spot 19", "type": "equirectangular", "panorama": "panos/image19.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s20", "text": "Ke Spot 20" }] },
       "s20": { "title": "Spot 20", "type": "equirectangular", "panorama": "panos/image20.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s21", "text": "Ke Spot 21" }] },
       "s21": { "title": "Spot 21", "type": "equirectangular", "panorama": "panos/image21.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s22", "text": "Ke Spot 22" }] },
-      "s22": { "title": "Spot 22", "type": "equirectangular", "panorama": "panos/image22.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s23", "text": "Ke Spot 23" }] },
-      "s23": { "title": "Spot 23", "type": "equirectangular", "panorama": "panos/image23.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s24", "text": "Ke Spot 24" }] },
-      "s24": { "title": "Spot 24", "type": "equirectangular", "panorama": "panos/image24.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s25", "text": "Ke Spot 25" }] },
-      "s25": { "title": "Spot 25", "type": "equirectangular", "panorama": "panos/image25.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s26", "text": "Ke Spot 26" }] },
-      "s26": { "title": "Spot 26", "type": "equirectangular", "panorama": "panos/image26.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s27", "text": "Ke Spot 27" }] },
-      "s27": { "title": "Spot 27", "type": "equirectangular", "panorama": "panos/image27.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s28", "text": "Ke Spot 28" }] },
-      "s28": { "title": "Spot 28", "type": "equirectangular", "panorama": "panos/image28.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s29", "text": "Ke Spot 29" }] },
-      "s29": { "title": "Spot 29", "type": "equirectangular", "panorama": "panos/image29.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s30", "text": "Ke Spot 30" }] },
-      "s30": { "title": "Spot 30", "type": "equirectangular", "panorama": "panos/image30.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s31", "text": "Ke Spot 31" }] },
-      "s31": { "title": "Spot 31", "type": "equirectangular", "panorama": "panos/image31.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s32", "text": "Ke Spot 32" }] },
-      "s32": { "title": "Spot 32", "type": "equirectangular", "panorama": "panos/image32.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s33", "text": "Ke Spot 33" }] },
-      "s33": { "title": "Spot 33", "type": "equirectangular", "panorama": "panos/image33.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s34", "text": "Ke Spot 34" }] },
-      "s34": { "title": "Spot 34", "type": "equirectangular", "panorama": "panos/image34.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s35", "text": "Ke Spot 35" }] },
-      "s35": { "title": "Spot 35", "type": "equirectangular", "panorama": "panos/image35.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s36", "text": "Ke Spot 36" }] },
-      "s36": { "title": "Spot 36", "type": "equirectangular", "panorama": "panos/image36.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s37", "text": "Ke Spot 37" }] },
-      "s37": { "title": "Spot 37", "type": "equirectangular", "panorama": "panos/image37.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s38", "text": "Ke Spot 38" }] },
-      "s38": { "title": "Spot 38", "type": "equirectangular", "panorama": "panos/image38.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s39", "text": "Ke Spot 39" }] },
-      "s39": { "title": "Spot 39", "type": "equirectangular", "panorama": "panos/image39.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s40", "text": "Ke Spot 40" }] },
-      "s40": { "title": "Spot 40", "type": "equirectangular", "panorama": "panos/image40.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s41", "text": "Ke Spot 41" }] },
-      "s41": { "title": "Spot 41", "type": "equirectangular", "panorama": "panos/image41.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s42", "text": "Ke Spot 42" }] },
-      "s42": { "title": "Spot 42", "type": "equirectangular", "panorama": "panos/image42.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s43", "text": "Ke Spot 43" }] },
-      "s43": { "title": "Spot 43", "type": "equirectangular", "panorama": "panos/image43.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s44", "text": "Ke Spot 44" }] },
-      "s44": { "title": "Spot 44", "type": "equirectangular", "panorama": "panos/image44.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s45", "text": "Ke Spot 45" }] },
-      "s45": { "title": "Spot 45", "type": "equirectangular", "panorama": "panos/image45.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s46", "text": "Ke Spot 46" }] },
-      "s46": { "title": "Spot 46", "type": "equirectangular", "panorama": "panos/image46.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s47", "text": "Ke Spot 47" }] },
-      "s47": { "title": "Spot 47", "type": "equirectangular", "panorama": "panos/image47.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s48", "text": "Ke Spot 48" }] },
-      "s48": { "title": "Spot 48", "type": "equirectangular", "panorama": "panos/image48.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s49", "text": "Ke Spot 49" }] },
-      "s49": { "title": "Spot 49", "type": "equirectangular", "panorama": "panos/image49.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s50", "text": "Ke Spot 50" }] },
-      "s50": { "title": "Spot 50", "type": "equirectangular", "panorama": "panos/image50.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s51", "text": "Ke Spot 51" }] },
-      "s51": { "title": "Spot 51", "type": "equirectangular", "panorama": "panos/image51.jpg", "hotSpots": [{ "pitch": -6, "yaw": -40, "type": "scene", "sceneId": "s52", "text": "Ke Spot 52" }] },
-      "s52": { "title": "Spot 52", "type": "equirectangular", "panorama": "panos/image52.jpg", "hotSpots": [{ "pitch": 0, "yaw": 0, "type": "scene", "sceneId": "s53", "text": "Ke Spot 53" }] },
-      "s53": { "title": "Spot 53", "type": "equirectangular", "panorama": "panos/image53.jpg" }
-    }
+     }
   });
 
   // Fungsi untuk menampilkan modal minimap
@@ -291,7 +206,7 @@
     viewerContainer.addEventListener('mousedown', handlePointer, true);
     viewerContainer.addEventListener('touchstart', handlePointer, true);
     viewerContainer.addEventListener('click', handlePointer, true);
-    viewerContainer.addEventListener('touchend', handlePointer, true);
+    viewerContainer.addEventListener('touchend', handlePointer, true);PeriodicWave
     viewerContainer.addEventListener('wheel', handleScroll, wheelListenerOptions);
     toggleBtn.textContent = 'Aktifkan Drag';
     setCoordHint('Mode koordinat aktif — klik panorama');
