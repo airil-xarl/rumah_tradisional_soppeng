@@ -1,11 +1,11 @@
 :root {
   /* Theme colors */
-  --bg: #0b1020;
-  --ink: #e6edf3;
-  --muted: #9fb0c4;
-  --panel: #0f162e;
-  --line: #1f2a44;
-  --accent: #22d3ee;
+  --bg: #111827;
+  --ink: #FDE68A;
+  --muted: #FB923C;
+  --panel: #111827;
+  --line: #FB923C;
+  --accent: #F97316;
 }
 
 /* Ensure predictable box sizing across the page */
@@ -23,7 +23,8 @@ body {
 header {
   padding: 18px 16px;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  /* Diubah dari rgba(255, 255, 255, 0.03) ke rgba dari --ink */
+  background: linear-gradient(180deg, rgba(253, 230, 138, 0.03), rgba(253, 230, 138, 0));
 }
 
 header h1 {
@@ -61,17 +62,20 @@ header .muted {
 }
 
 .content code {
-  background-color: #222e3b;
+  /* Diubah dari #222e3b ke --bg */
+  background-color: #111827;
   padding: 4px 6px;
   border-radius: 6px;
   color: var(--accent);
 }
 
 .content pre {
-  background-color: #222e3b;
+  /* Diubah dari #222e3b ke --bg */
+  background-color: #111827;
   padding: 12px;
   border-radius: 6px;
-  color: #e6edf3;
+  /* Diubah dari #e6edf3 ke --ink */
+  color: var(--ink);
   margin: 0 0 12px;
   overflow: auto;
 }
@@ -88,7 +92,8 @@ header .muted {
   border-radius: 12px;
   border: 1px solid var(--line);
   overflow: hidden;
-  background: #11192b;
+  /* Diubah dari #11192b ke --bg */
+  background: #111827;
 }
 
 .content figure img {
@@ -116,7 +121,8 @@ header .muted {
   gap: 6px;
   padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(34, 211, 238, 0.4);
+  /* Diubah dari rgba(34, 211, 238, 0.4) ke rgba dari --accent */
+  border: 1px solid rgba(249, 115, 22, 0.4);
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
@@ -124,7 +130,8 @@ header .muted {
 }
 
 .back-home:hover {
-  background: rgba(34, 211, 238, 0.12);
+  /* Diubah dari rgba(34, 211, 238, 0.12) ke rgba dari --accent */
+  background: rgba(249, 115, 22, 0.12);
   transform: translateY(-1px);
 }
 
@@ -134,7 +141,8 @@ header .muted {
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
-  background: #11192b;
+  /* Diubah dari #11192b ke --bg */
+  background: #111827;
 }
 
 .mini-panorama > div {
@@ -147,4 +155,32 @@ footer {
   font-size: 12px;
   text-align: center;
   padding: 28px 16px;
+}
+
+.container-sejajar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container-sejajar figure {
+  flex: 1;
+  margin: 0;
+  /* Diubah dari #ccc ke var(--line) agar tematik */
+  border: 1px solid var(--line);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container-sejajar figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container-sejajar figure figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
 }

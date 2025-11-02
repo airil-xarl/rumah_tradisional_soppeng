@@ -1,10 +1,11 @@
-
 html, body {
   height: 100%;
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #d0ff00;
-  color: #e6edf3;
+  /* Diubah dari #d0ff00 ke warna dasar gelap dari palet */
+  background: #111827; 
+  /* Diubah dari #e6edf3 ke warna terang dari palet */
+  color: #FDE68A; 
   display: flex;
   flex-direction: column;
 }
@@ -19,7 +20,8 @@ body {
   width: 100%;
   height: 100%;
   min-height: 70vh; /* minimal agar tombol tetap terlihat */
-  border-top: 2px solid #1f2937;
+  /* Diubah dari #1f2937 ke warna aksen oranye */
+  border-top: 2px solid #F97316; 
   position: relative;
 }
 
@@ -30,24 +32,33 @@ body {
   gap: 6px;
   padding: 12px;
   justify-content: center;
-  background: #111831;
-  border-top: 1px solid #1f2a44;
+  /* Diubah dari #111831 ke warna dasar gelap */
+  background: #111827; 
+  /* Diubah dari #1f2a44 ke aksen oranye yang lebih muda */
+  border-top: 1px solid #FB923C; 
 }
 
 /* Tombol scene */
 .scenes button {
   padding: 6px 10px;
-  border: 1px solid #334155;
-  background: #1e293b;
-  color: #e2e8f0;
+  /* Diubah dari #334155 ke aksen oranye */
+  border: 1px solid #F97316; 
+  /* Diubah dari #1e293b ke aksen oranye utama */
+  background: #F97316; 
+  /* Diubah dari #e2e8f0 ke warna gelap agar kontras dgn bg oranye */
+  color: #111827; 
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
 }
 
 .scenes button:hover {
-  border-color: #22d3ee;
-  color: #22d3ee;
+  /* Diubah dari #22d3ee ke aksen oranye yg lebih muda */
+  border-color: #FB923C; 
+  /* Diubah dari #22d3ee ke warna gelap (sudah diatur di atas) */
+  color: #111827; 
+  /* Ditambahkan background hover agar konsisten */
+  background: #FB923C; 
 }
 
 /* Supaya tombol tetap terlihat di layar kecil */
@@ -75,8 +86,10 @@ body {
   gap: 6px;
   padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(34, 211, 238, 0.4);
-  color: #22d3ee;
+  /* Diubah dari rgba cyan ke oranye */
+  border: 1px solid rgba(249, 115, 22, 0.4); 
+  /* Diubah dari #22d3ee ke oranye */
+  color: #F97316; 
   background: transparent;
   text-decoration: none;
   font-weight: 600;
@@ -85,17 +98,21 @@ body {
 }
 
 .go-home:hover {
-  background: rgba(34, 211, 238, 0.16);
+  /* Diubah dari rgba cyan ke oranye */
+  background: rgba(249, 115, 22, 0.16); 
   transform: translateY(-1px);
 }
 
 .minimap-btn {
-  background: #22d3ee;
-  color: #001018;
+  /* Diubah dari #22d3ee ke oranye */
+  background: #F97316; 
+  /* Diubah dari #001018 ke warna gelap palet */
+  color: #111827; 
   font-weight: 700;
   padding: 10px 18px;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(34,211,238,.18);
+  /* Diubah dari shadow cyan ke oranye */
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.18); 
   border: none;
   cursor: pointer;
   font-size: 16px;
@@ -103,8 +120,10 @@ body {
 }
 
 .minimap-btn:hover {
-  background: #0ea5e9;
-  color: #fff;
+  /* Diubah dari #0ea5e9 ke oranye muda */
+  background: #FB923C; 
+  /* Diubah dari #fff ke warna gelap palet */
+  color: #111827; 
 }
 
 .top-bar__actions {
@@ -118,6 +137,7 @@ body {
   text-align: center;
   font-size: 22px;
   letter-spacing: .02em;
+  /* Warna diambil dari body (color: #FDE68A) */
 }
 
 .minimap-modal {
@@ -127,7 +147,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(11,16,32,0.85);
+  /* Diubah dari rgba(11,16,32,0.85) ke rgba warna gelap palet */
+  background: rgba(17, 24, 39, 0.85); 
   z-index: 2000;
   justify-content: center;
   align-items: center;
@@ -141,26 +162,29 @@ body {
   max-width: 90vw;
   max-height: 80vh;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(34,211,238,.25);
-  background: #fff;
+  /* Diubah dari shadow cyan ke oranye */
+  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.25); 
+  /* Diubah dari #fff ke warna terang palet */
+  background: #FDE68A; 
 }
 
 .coord-hint {
   position: fixed;
   right: 28px;
   bottom: 32px;
-  background: rgba(17, 24, 49, 0.85);
-  color: #22d3ee;
+  /* Diubah dari rgba(17, 24, 49, 0.85) ke rgba warna gelap palet */
+  background: rgba(17, 24, 39, 0.85); 
+  /* Diubah dari #22d3ee ke oranye */
+  color: #F97316; 
   padding: 10px 18px;
   border-radius: 10px;
   font-weight: 700;
   font-family: monospace;
   pointer-events: none;
   z-index: 5;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35); /* Shadow ini dipertahankan krn hitam netral */
 }
-/* 
-.custom-hotspot span {
+/* .custom-hotspot span {
   visibility: hidden;
   position: absolute;
   border-radius: 3px;
