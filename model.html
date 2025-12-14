@@ -5,35 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Model 3D Rumah Adat Soppeng</title>
 
-    <!-- CDN model-viewer -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="../style/vtour.css">
+    <link rel="stylesheet" href="../style/model3d.css">
 
-    <style>
-        body {
-            margin: 0;
-            background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        model-viewer {
-            width: 100%;
-            height: 100vh;
-        }
-    </style>
+    <!-- Google Model Viewer -->
+    <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
 </head>
-
 <body>
-    <model-viewer 
-        src="Aset/360/rumah_adat_soppeng.glb"
-        alt="Model 3D Rumah Adat Soppeng"
-        auto-rotate
-        camera-controls
-        ar
-        exposure="1.2"
-        shadow-intensity="1"
-    >
-    </model-viewer>
+
+<div class="top-bar">
+    <a class="go-home" href="../index.html">← Kembali ke Beranda</a>
+    <h3 class="page-title" style="color: #FDE68A;">Model 3D Rumah Adat Soppeng</h3>
+    <div class="top-bar__actions">
+        <button id="resetViewBtn" class="minimap-btn" type="button">
+            Reset Kamera
+        </button>
+    </div>
+</div>
+
+<main class="viewer-container">
+    <div id="viewer">
+
+        <model-viewer
+            id="model"
+            src="3D/rumah_adat_soppeng - Copy.glb"
+            alt="Model 3D Rumah Adat Soppeng"
+
+            camera-controls
+            interaction-prompt="none"
+
+            /* POSISI AWAL MENGHADAP DEPAN */
+            camera-orbit="90deg 75deg 90m"
+            camera-target="45m 45m 0m"
+            field-of-view="30deg"
+
+            /* PENCAHAYAAN LEBIH NATURAL */
+            environment-image="neutral"
+            exposure="0.25"
+            tone-mapping="neutral"
+            shadow-intensity="1"
+
+            style="width:100%; height:100%; background:transparent;">
+        </model-viewer>
+
+    </div>
+</main>
+
+<footer class="page-footer">
+    © 2025 · Tur Virtual Rumah Adat Soppeng · Tampilan Natural Model 3D
+</footer>
+
+<script>
+const modelViewer = document.getElementById("model");
+const resetBtn = document.getElementById("resetViewBtn");
+
+/* SIMPAN POSISI AWAL */
+const initialOrbit = "90deg 75deg 90m";
+const initialTarget = "45m 45m 0m";
+const initialFov = "30fhfhdeg"
+
+resetBtn.addEventListener("click", () => {
+    modelViewer.cameraOrbit = initialOrbit;
+    modelViewer.cameraTarget = initialTarget;
+    modelViewer.fieldOfView = initialFov;
+});
+</script>
+
 </body>
 </html>

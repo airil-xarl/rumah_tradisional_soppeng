@@ -1,0 +1,84 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(
+    circle at top,
+    #1b2447 0%,
+    #0b1020 55%,
+    #060914 100%
+  );
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* CONTAINER */
+.viewer-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  padding: 0 0 16px;
+}
+
+/* VIEWER AREA */
+#viewer {
+  flex: 1;
+  min-height: 72vh;
+  position: relative;
+
+  /* Frame & depth */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.01)
+  );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+
+  /* Soft glow supaya model "hidup" */
+  box-shadow:
+    inset 0 0 80px rgba(255, 255, 255, 0.05),
+    0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* CANVAS */
+#viewer canvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* FOOTER */
+.page-footer {
+  margin: 0;
+  padding: 18px 24px;
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #101634,
+    #0a0f24
+  );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+/* BUTTON STATE */
+.minimap-btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* RESPONSIVE */
+@media (max-height: 600px) {
+  #viewer {
+    min-height: 60vh;
+  }
+}
