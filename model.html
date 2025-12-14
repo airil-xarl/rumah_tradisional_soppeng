@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Model 3D Rumah Adat Soppeng</title>
 
-    <link rel="stylesheet" href=".../style/vtour.css">
-    <link rel="stylesheet" href=".../style/model3d.css">
+    <link rel="stylesheet" href="../style/vtour.css">
+    <link rel="stylesheet" href="../style/model3d.css">
 
-    <!-- Google Model Viewer -->
     <script type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
@@ -30,23 +29,17 @@
 
         <model-viewer
             id="model"
-            src=".../3D/rumah_adat_soppeng - Copy.glb"
+            src="../3d/rumah_adat_soppeng.glb"
             alt="Model 3D Rumah Adat Soppeng"
-
             camera-controls
             interaction-prompt="none"
-
-            /* POSISI AWAL MENGHADAP DEPAN */
             camera-orbit="90deg 75deg 90m"
             camera-target="45m 45m 0m"
             field-of-view="30deg"
-
-            /* PENCAHAYAAN LEBIH NATURAL */
             environment-image="neutral"
             exposure="0.25"
             tone-mapping="neutral"
             shadow-intensity="1"
-
             style="width:100%; height:100%; background:transparent;">
         </model-viewer>
 
@@ -61,10 +54,9 @@
 const modelViewer = document.getElementById("model");
 const resetBtn = document.getElementById("resetViewBtn");
 
-/* SIMPAN POSISI AWAL */
 const initialOrbit = "90deg 75deg 90m";
 const initialTarget = "45m 45m 0m";
-const initialFov = "30fhfhdeg"
+const initialFov = "30deg";
 
 resetBtn.addEventListener("click", () => {
     modelViewer.cameraOrbit = initialOrbit;
